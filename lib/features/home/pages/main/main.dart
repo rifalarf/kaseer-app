@@ -1,16 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:kaseer_app/features/home/pages/home/page.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class MainPage extends StatelessWidget {
+  const MainPage({super.key});
+
+  static const String routeName = '/home';
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-          child: Text(
-          'Hello, World!',
-          style: TextStyle(fontSize: 24),
-        ),
+    return Scaffold(
+      body: const HomePage(),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Beranda'),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Transaksi'),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'POS'),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Produk'),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Lainnya'),
+        ],
       ),
     );
   }

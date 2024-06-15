@@ -11,14 +11,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Kaseer App',
-      theme: LightTheme(AppColor.green).theme,
+      theme: LightTheme(AppColors.green).theme,
       home: const SplashScreen(),
       debugShowCheckedModeBanner: false,
       onGenerateRoute: (settings) {
         switch (settings.name) {
-          case '/home':
+          case MainPage.routeName:
             return MaterialPageRoute(builder: (_) {
-              return const HomePage();
+              return const MainPage();
             });
           default:
             return MaterialPageRoute(builder: (_) {
