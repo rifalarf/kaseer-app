@@ -13,12 +13,21 @@ class MyApp extends StatelessWidget {
       title: 'Kaseer App',
       theme: LightTheme(AppColor.green).theme,
       home: const SplashScreen(),
-      routes: {
-        '/home': (context) {
-          return const HomePage();
+      debugShowCheckedModeBanner: false,
+      onGenerateRoute: (settings) {
+        switch (settings.name) {
+          case '/home':
+            return MaterialPageRoute(builder: (_) {
+              return const HomePage();
+            });
+          default:
+            return MaterialPageRoute(builder: (_) {
+              return Scaffold(
+                body: Center(child: Text("Error Not Found")),
+              );
+            });
         }
       },
-      debugShowCheckedModeBanner: false,
     );
   }
 }
