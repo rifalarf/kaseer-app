@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
             });
           default:
             return MaterialPageRoute(builder: (_) {
-              return Scaffold(
+              return const Scaffold(
                 body: Center(child: Text("Error Not Found")),
               );
             });
