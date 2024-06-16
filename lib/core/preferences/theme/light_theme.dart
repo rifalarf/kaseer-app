@@ -60,24 +60,34 @@ class LightTheme {
         ),
       );
 
+  CardTheme get cardTheme {
+    return CardTheme(
+      margin: EdgeInsets.zero,
+      elevation: 0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(Dimens.dp8),
+        side: BorderSide(color: borderColor),
+      ),
+    );
+  }
+
+  BottomNavigationBarThemeData get bottomNavigationBarTheme {
+    return BottomNavigationBarThemeData(
+      type: BottomNavigationBarType.fixed,
+      selectedItemColor: primaryColor,
+      unselectedItemColor: disableColor,
+    );
+  }
+
   ThemeData get theme {
     return ThemeData(
-        fontFamily: 'Poppins',
-        colorScheme: colorScheme,
-        useMaterial3: true,
-        primaryColor: primaryColor,
-        textTheme: textTheme,
-        cardTheme: CardTheme(
-          margin: EdgeInsets.zero,
-          elevation: 0,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(Dimens.dp8),
-            side: BorderSide(color: borderColor),
-          ),
-        ),
-        bottomNavigationBarTheme: BottomNavigationBarThemeData(
-          selectedItemColor: primaryColor,
-          unselectedItemColor: disableColor,
-        ));
+      fontFamily: 'Poppins',
+      colorScheme: colorScheme,
+      useMaterial3: true,
+      primaryColor: primaryColor,
+      textTheme: textTheme,
+      cardTheme: cardTheme,
+      bottomNavigationBarTheme: bottomNavigationBarTheme,
+    );
   }
 }
